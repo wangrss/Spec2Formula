@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "model_id": "spec2formula-reference-v1",
+  "method": "Spec2Formula",
+  "models": {
+    "candidate_ranker": {
+      "file": "candidate_ranker.pt",
+      "config": {
+        "max_peaks": 128,
+        "max_mz": 500.0,
+        "d_model": 512,
+        "nhead": 8,
+        "num_layers": 6,
+        "dim_feedforward": 1536,
+        "dropout": 0.1,
+        "fourier_frequencies": 8,
+        "candidate_feature_dim": 25,
+        "formula_hidden_dim": 512,
+        "interaction_hidden_dim": 1024
+      },
+      "selected_epoch": 14,
+      "seed": 520,
+      "parameters": 19221044,
+      "source_sha256": "949b7fb6b2879350e72a13073abb51675bcd97ac6447605ee1e74bb45bb0df3e",
+      "export_state_identical": true
+    },
+    "evidence_reranker": {
+      "file": "evidence_reranker.pt",
+      "config": {
+        "base_spectrum_dim": 512,
+        "candidate_feature_dim": 25,
+        "evidence_feature_dim": 40,
+        "d_model": 256,
+        "nhead": 8,
+        "num_layers": 4,
+        "dim_feedforward": 768,
+        "dropout": 0.1
+      },
+      "selected_epoch": 7,
+      "seed": 520,
+      "parameters": 2982019,
+      "source_sha256": "e1c5645f8a9d24adb6456e23d8da8fef9507837bc799b9efbf92709ad9e2fc56",
+      "export_state_identical": true
+    }
+  },
+  "scope": {
+    "adduct": "[M+H]+",
+    "precursor_mz_exclusive_max": 500.0,
+    "precursor_error_cohort_filter": null
+  },
+  "preprocessing": {
+    "maximum_peaks": 128,
+    "evidence_peaks": 32,
+    "collision_energy": "NCE; missing value replaced by 0 and reported"
+  },
+  "candidate_domain": {
+    "elements": [
+      "C",
+      "H",
+      "B",
+      "N",
+      "O",
+      "F",
+      "Si",
+      "P",
+      "S",
+      "Cl",
+      "As",
+      "Se",
+      "Br",
+      "Sn",
+      "Sb",
+      "I"
+    ],
+    "count_limits": [
+      43,
+      77,
+      1,
+      13,
+      19,
+      17,
+      5,
+      5,
+      8,
+      8,
+      1,
+      2,
+      6,
+      1,
+      1,
+      5
+    ],
+    "ppm": 3.0,
+    "floor_da": 0.001,
+    "require_carbon": true,
+    "minimum_dbe": 0.0,
+    "enforce_integer_dbe": true,
+    "enforce_senior": true
+  },
+  "inference": {
+    "rerank_top_k": 20,
+    "base_candidate_chunk": 512,
+    "base_standardization": "population mean/SD across complete candidate list, SD floor 0.001",
+    "evidence_token_dtype": "float32"
+  },
+  "provenance": {
+    "training": "Reference training partition; 25965 connectivity groups",
+    "selection": "Validation-selected reference pair used for six-source external evaluation",
+    "five_fold_ensemble": false,
+    "all_data_retrained": false
+  }
+}

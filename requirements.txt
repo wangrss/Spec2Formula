@@ -1,0 +1,4 @@
+# Reference versions. Install the appropriate CPU/CUDA PyTorch wheel first.
+numpy==1.26.4
+torch==2.5.1
+

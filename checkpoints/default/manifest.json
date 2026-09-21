@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "model_id": "spec2formula-reference-v1",
+  "files": {
+    "candidate_ranker.pt": {
+      "sha256": "335c429cd6c8512ad2bfed5fcf10ba0373cafcd62049056969218ba70917155e",
+      "bytes": 76918531
+    },
+    "config.json": {
+      "sha256": "a1267535293e307ada147081cc9558cd927ce305942b767873f4d8769b68be9e",
+      "bytes": 2583
+    },
+    "evidence_reranker.pt": {
+      "sha256": "c8e56b7ac4765d513b164f6ee4f0d27346a3ec68bf534ce96dfe9c1a5b980e80",
+      "bytes": 11950447
+    },
+    "priors/count_log_probabilities.npz": {
+      "sha256": "13a9afb74039843088cee572a4623a7dc823c06661e7220f64b2df65eada40dc",
+      "bytes": 4946
+    },
+    "priors/formula_frequencies.npy": {
+      "sha256": "2d4d31da9079a4aed3b77533d615570949c87befe4d69a4a3c7b0a643ab605a9",
+      "bytes": 56604
+    },
+    "priors/formula_keys.npy": {
+      "sha256": "7bfd06d5341cfe8610248c8156fdffdd0ef2f0fa455c68a8d44fce4fd8f226ec",
+      "bytes": 113080
+    }
+  }
+}

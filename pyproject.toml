@@ -1,0 +1,18 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spec2formula"
+version = "0.1.0"
+description = "Molecular-formula inference with a Candidate ranker and Evidence reranker"
+readme = "README.md"
+requires-python = ">=3.10,<3.13"
+dependencies = ["numpy>=1.26,<2", "torch>=2.5,<2.6"]
+
+[project.scripts]
+spec2formula = "spec2formula.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+

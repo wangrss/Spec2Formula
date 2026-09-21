@@ -1,0 +1,10 @@
+* text=auto
+*.py text eol=lf
+*.cpp text eol=lf
+*.md text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.pt filter=lfs diff=lfs merge=lfs -text
+*.npy -text
+*.npz -text
+

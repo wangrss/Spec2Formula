@@ -1,0 +1,11 @@
+name: spec2formula
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pip:
+      - numpy==1.26.4
+      - torch==2.5.1
+      - -e .
+
