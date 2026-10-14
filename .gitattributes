@@ -7,4 +7,5 @@
 *.pt filter=lfs diff=lfs merge=lfs -text
 *.npy -text
 *.npz -text
+reproducibility/massbank/*.csv -text
 

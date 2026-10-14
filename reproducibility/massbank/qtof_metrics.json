@@ -1,0 +1,590 @@
+{
+  "evaluation": "Recalculation of archived ranks; no new inference",
+  "failure_policy": "Every manifest record retained; rank other than 1 contributes zero",
+  "methods": {
+    "Spec2Formula": {
+      "all": {
+        "spectra": 22573,
+        "connectivity_groups": 2162,
+        "spectrum_top1": 0.9670402693483365,
+        "molecule_top1": 0.8816632249607808
+      },
+      "source:Antwerp_Univ": {
+        "spectra": 705,
+        "connectivity_groups": 154,
+        "spectrum_top1": 0.9985815602836879,
+        "molecule_top1": 0.9967532467532467
+      },
+      "source:Athens_Univ": {
+        "spectra": 3712,
+        "connectivity_groups": 752,
+        "spectrum_top1": 0.9841056034482759,
+        "molecule_top1": 0.982705378250591
+      },
+      "source:BAFG": {
+        "spectra": 12813,
+        "connectivity_groups": 893,
+        "spectrum_top1": 0.9729181300241941,
+        "molecule_top1": 0.9549249606236959
+      },
+      "source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 78,
+        "connectivity_groups": 26,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:HBM4EU": {
+        "spectra": 299,
+        "connectivity_groups": 15,
+        "spectrum_top1": 0.9732441471571907,
+        "molecule_top1": 0.9733333333333334
+      },
+      "source:MSSJ": {
+        "spectra": 640,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.9546875,
+        "molecule_top1": 0.9586184255995577
+      },
+      "source:RIKEN": {
+        "spectra": 3691,
+        "connectivity_groups": 522,
+        "spectrum_top1": 0.9225142237875914,
+        "molecule_top1": 0.5591396151740978
+      },
+      "source:UPAO": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:UvA_IBED": {
+        "spectra": 9,
+        "connectivity_groups": 9,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:Washington_State_Univ": {
+        "spectra": 613,
+        "connectivity_groups": 230,
+        "spectrum_top1": 0.9820554649265906,
+        "molecule_top1": 0.9804347826086955
+      },
+      "internal_disjoint": {
+        "spectra": 6772,
+        "connectivity_groups": 768,
+        "spectrum_top1": 0.9617542823390431,
+        "molecule_top1": 0.8390887685809557
+      },
+      "internal_disjoint_source:Antwerp_Univ": {
+        "spectra": 351,
+        "connectivity_groups": 50,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:Athens_Univ": {
+        "spectra": 1007,
+        "connectivity_groups": 227,
+        "spectrum_top1": 0.9940417080436942,
+        "molecule_top1": 0.9920704845814977
+      },
+      "internal_disjoint_source:BAFG": {
+        "spectra": 3985,
+        "connectivity_groups": 288,
+        "spectrum_top1": 0.970138017565872,
+        "molecule_top1": 0.9430352522953626
+      },
+      "internal_disjoint_source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "internal_disjoint_source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 12,
+        "connectivity_groups": 4,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:HBM4EU": {
+        "spectra": 40,
+        "connectivity_groups": 2,
+        "spectrum_top1": 0.95,
+        "molecule_top1": 0.95
+      },
+      "internal_disjoint_source:MSSJ": {
+        "spectra": 166,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.9939759036144579,
+        "molecule_top1": 0.9952380952380953
+      },
+      "internal_disjoint_source:RIKEN": {
+        "spectra": 1041,
+        "connectivity_groups": 194,
+        "spectrum_top1": 0.8789625360230547,
+        "molecule_top1": 0.46037725161436505
+      },
+      "internal_disjoint_source:UPAO": {
+        "spectra": 1,
+        "connectivity_groups": 1,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UvA_IBED": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:Washington_State_Univ": {
+        "spectra": 156,
+        "connectivity_groups": 57,
+        "spectrum_top1": 0.9871794871794872,
+        "molecule_top1": 0.9853801169590642
+      }
+    },
+    "msbuddy": {
+      "all": {
+        "spectra": 22573,
+        "connectivity_groups": 2162,
+        "spectrum_top1": 0.8550923669871084,
+        "molecule_top1": 0.8607876974076023
+      },
+      "source:Antwerp_Univ": {
+        "spectra": 705,
+        "connectivity_groups": 154,
+        "spectrum_top1": 0.7829787234042553,
+        "molecule_top1": 0.8769841269841269
+      },
+      "source:Athens_Univ": {
+        "spectra": 3712,
+        "connectivity_groups": 752,
+        "spectrum_top1": 0.8550646551724138,
+        "molecule_top1": 0.8544178486997639
+      },
+      "source:BAFG": {
+        "spectra": 12813,
+        "connectivity_groups": 893,
+        "spectrum_top1": 0.8306407554827129,
+        "molecule_top1": 0.8365292863265449
+      },
+      "source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.8571428571428571,
+        "molecule_top1": 0.8571428571428571
+      },
+      "source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 78,
+        "connectivity_groups": 26,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:HBM4EU": {
+        "spectra": 299,
+        "connectivity_groups": 15,
+        "spectrum_top1": 0.842809364548495,
+        "molecule_top1": 0.8433333333333334
+      },
+      "source:MSSJ": {
+        "spectra": 640,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.8125,
+        "molecule_top1": 0.8157612827424148
+      },
+      "source:RIKEN": {
+        "spectra": 3691,
+        "connectivity_groups": 522,
+        "spectrum_top1": 0.93741533459767,
+        "molecule_top1": 0.849884649194994
+      },
+      "source:UPAO": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:UvA_IBED": {
+        "spectra": 9,
+        "connectivity_groups": 9,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:Washington_State_Univ": {
+        "spectra": 613,
+        "connectivity_groups": 230,
+        "spectrum_top1": 0.9820554649265906,
+        "molecule_top1": 0.9840579710144927
+      },
+      "internal_disjoint": {
+        "spectra": 6772,
+        "connectivity_groups": 768,
+        "spectrum_top1": 0.8484937979917306,
+        "molecule_top1": 0.8434449973555557
+      },
+      "internal_disjoint_source:Antwerp_Univ": {
+        "spectra": 351,
+        "connectivity_groups": 50,
+        "spectrum_top1": 0.6666666666666666,
+        "molecule_top1": 0.7661111111111112
+      },
+      "internal_disjoint_source:Athens_Univ": {
+        "spectra": 1007,
+        "connectivity_groups": 227,
+        "spectrum_top1": 0.9145978152929494,
+        "molecule_top1": 0.9087004405286345
+      },
+      "internal_disjoint_source:BAFG": {
+        "spectra": 3985,
+        "connectivity_groups": 288,
+        "spectrum_top1": 0.82534504391468,
+        "molecule_top1": 0.8357921351410933
+      },
+      "internal_disjoint_source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.8571428571428571,
+        "molecule_top1": 0.8571428571428571
+      },
+      "internal_disjoint_source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 12,
+        "connectivity_groups": 4,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:HBM4EU": {
+        "spectra": 40,
+        "connectivity_groups": 2,
+        "spectrum_top1": 0.275,
+        "molecule_top1": 0.275
+      },
+      "internal_disjoint_source:MSSJ": {
+        "spectra": 166,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.9096385542168675,
+        "molecule_top1": 0.9031746031746032
+      },
+      "internal_disjoint_source:RIKEN": {
+        "spectra": 1041,
+        "connectivity_groups": 194,
+        "spectrum_top1": 0.9269932756964457,
+        "molecule_top1": 0.7705181416521624
+      },
+      "internal_disjoint_source:UPAO": {
+        "spectra": 1,
+        "connectivity_groups": 1,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UvA_IBED": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:Washington_State_Univ": {
+        "spectra": 156,
+        "connectivity_groups": 57,
+        "spectrum_top1": 0.9615384615384616,
+        "molecule_top1": 0.9649122807017543
+      }
+    },
+    "MIST_CF": {
+      "all": {
+        "spectra": 22573,
+        "connectivity_groups": 2162,
+        "spectrum_top1": 0.825986798387454,
+        "molecule_top1": 0.803743827721258
+      },
+      "source:Antwerp_Univ": {
+        "spectra": 705,
+        "connectivity_groups": 154,
+        "spectrum_top1": 0.849645390070922,
+        "molecule_top1": 0.8834415584415585
+      },
+      "source:Athens_Univ": {
+        "spectra": 3712,
+        "connectivity_groups": 752,
+        "spectrum_top1": 0.8133081896551724,
+        "molecule_top1": 0.8114129517055051
+      },
+      "source:BAFG": {
+        "spectra": 12813,
+        "connectivity_groups": 893,
+        "spectrum_top1": 0.8196363068758292,
+        "molecule_top1": 0.8249696662083268
+      },
+      "source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 78,
+        "connectivity_groups": 26,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:HBM4EU": {
+        "spectra": 299,
+        "connectivity_groups": 15,
+        "spectrum_top1": 0.8929765886287625,
+        "molecule_top1": 0.8933333333333333
+      },
+      "source:MSSJ": {
+        "spectra": 640,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.8015625,
+        "molecule_top1": 0.8038115972078236
+      },
+      "source:RIKEN": {
+        "spectra": 3691,
+        "connectivity_groups": 522,
+        "spectrum_top1": 0.8350040639393118,
+        "molecule_top1": 0.7018808809326053
+      },
+      "source:UPAO": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:UvA_IBED": {
+        "spectra": 9,
+        "connectivity_groups": 9,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:Washington_State_Univ": {
+        "spectra": 613,
+        "connectivity_groups": 230,
+        "spectrum_top1": 0.9233278955954323,
+        "molecule_top1": 0.9144927536231885
+      },
+      "internal_disjoint": {
+        "spectra": 6772,
+        "connectivity_groups": 768,
+        "spectrum_top1": 0.8260484347312463,
+        "molecule_top1": 0.7830535136928689
+      },
+      "internal_disjoint_source:Antwerp_Univ": {
+        "spectra": 351,
+        "connectivity_groups": 50,
+        "spectrum_top1": 0.8062678062678063,
+        "molecule_top1": 0.8383333333333334
+      },
+      "internal_disjoint_source:Athens_Univ": {
+        "spectra": 1007,
+        "connectivity_groups": 227,
+        "spectrum_top1": 0.8540218470705064,
+        "molecule_top1": 0.845479337109293
+      },
+      "internal_disjoint_source:BAFG": {
+        "spectra": 3985,
+        "connectivity_groups": 288,
+        "spectrum_top1": 0.8198243412797992,
+        "molecule_top1": 0.8297392861851648
+      },
+      "internal_disjoint_source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "internal_disjoint_source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 12,
+        "connectivity_groups": 4,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:HBM4EU": {
+        "spectra": 40,
+        "connectivity_groups": 2,
+        "spectrum_top1": 0.475,
+        "molecule_top1": 0.475
+      },
+      "internal_disjoint_source:MSSJ": {
+        "spectra": 166,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.8253012048192772,
+        "molecule_top1": 0.8284126984126984
+      },
+      "internal_disjoint_source:RIKEN": {
+        "spectra": 1041,
+        "connectivity_groups": 194,
+        "spectrum_top1": 0.8309317963496637,
+        "molecule_top1": 0.6130113443257773
+      },
+      "internal_disjoint_source:UPAO": {
+        "spectra": 1,
+        "connectivity_groups": 1,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UvA_IBED": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:Washington_State_Univ": {
+        "spectra": 156,
+        "connectivity_groups": 57,
+        "spectrum_top1": 0.8974358974358975,
+        "molecule_top1": 0.8859649122807017
+      }
+    },
+    "SIRIUS": {
+      "all": {
+        "spectra": 22573,
+        "connectivity_groups": 2162,
+        "spectrum_top1": 0.6247729588446373,
+        "molecule_top1": 0.607307065508331
+      },
+      "source:Antwerp_Univ": {
+        "spectra": 705,
+        "connectivity_groups": 154,
+        "spectrum_top1": 0.7375886524822695,
+        "molecule_top1": 0.7501803751803754
+      },
+      "source:Athens_Univ": {
+        "spectra": 3712,
+        "connectivity_groups": 752,
+        "spectrum_top1": 0.5455280172413793,
+        "molecule_top1": 0.5579035510883916
+      },
+      "source:BAFG": {
+        "spectra": 12813,
+        "connectivity_groups": 893,
+        "spectrum_top1": 0.6601108249434169,
+        "molecule_top1": 0.6638381288900727
+      },
+      "source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 78,
+        "connectivity_groups": 26,
+        "spectrum_top1": 0.9615384615384616,
+        "molecule_top1": 0.9615384615384617
+      },
+      "source:HBM4EU": {
+        "spectra": 299,
+        "connectivity_groups": 15,
+        "spectrum_top1": 0.7157190635451505,
+        "molecule_top1": 0.7164912280701754
+      },
+      "source:MSSJ": {
+        "spectra": 640,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.7375,
+        "molecule_top1": 0.7405522150805172
+      },
+      "source:RIKEN": {
+        "spectra": 3691,
+        "connectivity_groups": 522,
+        "spectrum_top1": 0.5386074234624763,
+        "molecule_top1": 0.4982114067009122
+      },
+      "source:UPAO": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 0.6666666666666666,
+        "molecule_top1": 0.6666666666666666
+      },
+      "source:UvA_IBED": {
+        "spectra": 9,
+        "connectivity_groups": 9,
+        "spectrum_top1": 0.8888888888888888,
+        "molecule_top1": 0.8888888888888888
+      },
+      "source:Washington_State_Univ": {
+        "spectra": 613,
+        "connectivity_groups": 230,
+        "spectrum_top1": 0.5464926590538336,
+        "molecule_top1": 0.5572463768115943
+      },
+      "internal_disjoint": {
+        "spectra": 6772,
+        "connectivity_groups": 768,
+        "spectrum_top1": 0.6303898405197874,
+        "molecule_top1": 0.5982759475438155
+      },
+      "internal_disjoint_source:Antwerp_Univ": {
+        "spectra": 351,
+        "connectivity_groups": 50,
+        "spectrum_top1": 0.6837606837606838,
+        "molecule_top1": 0.7208888888888889
+      },
+      "internal_disjoint_source:Athens_Univ": {
+        "spectra": 1007,
+        "connectivity_groups": 227,
+        "spectrum_top1": 0.5938430983118173,
+        "molecule_top1": 0.6204470761739487
+      },
+      "internal_disjoint_source:BAFG": {
+        "spectra": 3985,
+        "connectivity_groups": 288,
+        "spectrum_top1": 0.6614805520702635,
+        "molecule_top1": 0.6695071972110013
+      },
+      "internal_disjoint_source:CPU": {
+        "spectra": 7,
+        "connectivity_groups": 7,
+        "spectrum_top1": 0.5714285714285714,
+        "molecule_top1": 0.5714285714285714
+      },
+      "internal_disjoint_source:Env_Anal_Chem_U_Tuebingen": {
+        "spectra": 12,
+        "connectivity_groups": 4,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:HBM4EU": {
+        "spectra": 40,
+        "connectivity_groups": 2,
+        "spectrum_top1": 0.575,
+        "molecule_top1": 0.575
+      },
+      "internal_disjoint_source:MSSJ": {
+        "spectra": 166,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.6746987951807228,
+        "molecule_top1": 0.6915873015873018
+      },
+      "internal_disjoint_source:RIKEN": {
+        "spectra": 1041,
+        "connectivity_groups": 194,
+        "spectrum_top1": 0.5360230547550432,
+        "molecule_top1": 0.4273300153454792
+      },
+      "internal_disjoint_source:UPAO": {
+        "spectra": 1,
+        "connectivity_groups": 1,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UvA_IBED": {
+        "spectra": 6,
+        "connectivity_groups": 6,
+        "spectrum_top1": 0.8333333333333334,
+        "molecule_top1": 0.8333333333333334
+      },
+      "internal_disjoint_source:Washington_State_Univ": {
+        "spectra": 156,
+        "connectivity_groups": 57,
+        "spectrum_top1": 0.5128205128205128,
+        "molecule_top1": 0.5087719298245613
+      }
+    }
+  }
+}

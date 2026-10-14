@@ -7,6 +7,7 @@ name = "spec2formula"
 version = "0.1.0"
 description = "Molecular-formula inference with a Candidate ranker and Evidence reranker"
 readme = "README.md"
+license = {file = "LICENSE"}
 requires-python = ">=3.10,<3.13"
 dependencies = ["numpy>=1.26,<2", "torch>=2.5,<2.6"]
 

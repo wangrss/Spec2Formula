@@ -3,10 +3,10 @@
 from __future__ import annotations
 
 import numpy as np
+from ..protocol import PROTON_MASS_DA, COUNT_SCALES, DOMAIN_FLOOR_DA, DOMAIN_RELATIVE_TOLERANCE
 
 
-PROTON_MASS_DA = 1.007276466621
-COUNT_LIMITS = np.asarray([43, 77, 1, 13, 19, 17, 5, 5, 8, 8, 1, 2, 6, 1, 1, 5], dtype=np.float32)
+COUNT_LIMITS = np.asarray(COUNT_SCALES, dtype=np.float32)
 COUNT_BIT_WIDTHS = np.asarray([6, 7, 1, 4, 5, 5, 3, 3, 4, 4, 1, 2, 3, 1, 1, 3], dtype=np.uint64)
 COUNT_BIT_SHIFTS = np.concatenate(
     (np.asarray([0], dtype=np.uint64), np.cumsum(COUNT_BIT_WIDTHS[:-1], dtype=np.uint64))
@@ -77,7 +77,7 @@ def normalized_candidate_features(
     counts_scaled = np.asarray(counts, dtype=np.float32) / COUNT_LIMITS[None, :]
     mass_scaled = np.asarray(exact_mass, dtype=np.float32)[:, None] / 500.0
     dbe_scaled = np.asarray(dbe, dtype=np.float32)[:, None] / 40.0
-    half_width = max(0.001, float(neutral_mass) * 3.0e-6)
+    half_width = max(DOMAIN_FLOOR_DA, float(neutral_mass) * DOMAIN_RELATIVE_TOLERANCE)
     mass_error = (
         np.abs(np.asarray(exact_mass, dtype=np.float64) - float(neutral_mass)) / half_width
     ).astype(np.float32)[:, None]

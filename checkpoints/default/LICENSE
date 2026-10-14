@@ -1,0 +1,10 @@
+Model asset distribution notice
+
+This notice covers candidate_ranker.pt, evidence_reranker.pt and the three
+training-derived prior arrays in this directory. Software licensing under
+the repository's MIT License does not extend to these assets.
+
+The author has selected MIT for the software and has expressly deferred
+licensing the model weights and priors. These assets are not licensed under
+the project's MIT License. This notice records the author's 2026-10-14
+decision and does not grant additional rights to these assets.

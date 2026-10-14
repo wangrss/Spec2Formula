@@ -1,0 +1,32 @@
+{
+  "synthetic_only": true,
+  "runtime": {
+    "python": "3.11.16",
+    "numpy": "1.26.4",
+    "torch": "2.5.1",
+    "device": "cpu",
+    "precision": "fp32"
+  },
+  "candidate_count": 23,
+  "native_candidate_reference": "Frozen original C++ enumerator output for artificial mass 350.25 Da",
+  "oracle": "Original feature, evidence-token and model implementations; exported checkpoint state dictionaries; exact parity required before freezing",
+  "reference_source_sha256": {
+    "formula_candidate_cache_v1.cpp": "db282ea8f506abd15913d1708d22a212584d90e365ed74b6be729bde7b35e2dd",
+    "features.py": "e6694ee5ac60efdb502eda8c95bbf0b0dd49a8d0d8bb8e2c6af384857445bcd9",
+    "large_evidence_model.py": "b048349fab4bb203a0ab9be72c48e142107db1cf748d74e3ad0ff67d05fd9fa7",
+    "exact_matcher.py": "ca3709e451b67897630fbce3908bef626f79c17135e8d6f186881cd583064eec",
+    "tokens.py": "ee222bd23e8c1d165979f4c8ff44882dc2ca3300012c2a769cee2ed035173346",
+    "run_stage_b2a_interface_smoke_v1.py": "cd6f8698d416ff3b8eb98863ae6550b0a2da479f7aa3b550b1285d86534fc543"
+  },
+  "model_asset_sha256": {
+    "candidate_ranker.pt": "335c429cd6c8512ad2bfed5fcf10ba0373cafcd62049056969218ba70917155e",
+    "evidence_reranker.pt": "c8e56b7ac4765d513b164f6ee4f0d27346a3ec68bf534ce96dfe9c1a5b980e80"
+  },
+  "fixture_sha256": {
+    "reference_23.json": "c2026a4923e904c774cf06791c2033c0840912a8573d40831e07c1db86752f57",
+    "reference_23.npz": "b4ca247e80dfa3b33cd0b8cb5415713fad2d2fa263a2d05cae51bd4eafb7884c"
+  },
+  "score_atol": 1e-05,
+  "score_rtol": 1e-05,
+  "rebuild_policy": "Do not regenerate fixtures to make a failing test pass. Independently review changes to reference code or weights."
+}

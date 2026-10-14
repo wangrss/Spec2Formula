@@ -8,6 +8,7 @@ import torch
 from .io import prepare_spectrum, Spectrum
 from .candidates import CandidateEnumerator
 from .featurize import FeatureBuilder, build_evidence
+from .protocol import validate_frozen_config, RERANK_TOP_K
 from .formula_ranker.large_evidence_model import (
     LargeFormulaRanker, LargeFormulaRankerConfig,
     EvidenceResidualTransformer, EvidenceTransformerConfig,
@@ -46,6 +47,7 @@ class Predictor:
         self.directory = Path(model_dir).resolve()
         verify_assets(self.directory)
         self.config = json.loads((self.directory/'config.json').read_text(encoding='utf-8'))
+        validate_frozen_config(self.config)
         self.device = torch.device(device)
         if self.device.type not in ('cpu','cuda'):
             raise ValueError('Supported devices are cpu and cuda')
@@ -118,7 +120,7 @@ class Predictor:
                   'method':'Spec2Formula', 'model_id':self.config['model_id'],
                   'precursor_mz':spectrum.precursor_mz, 'adduct':'[M+H]+',
                   'nce_used':spectrum.collision_energy,'peaks_used':spectrum.peak_length,
-                  'candidate_count':len(formulas), 'reranked_count':min(20,len(formulas)),
+                  'candidate_count':len(formulas), 'reranked_count':min(RERANK_TOP_K,len(formulas)),
                   'device':str(self.device), 'precision':self.precision,'candidate_backend':self.enumerator.backend,
                   'warnings':list(spectrum.warnings), 'predictions':[]}
         if not formulas:

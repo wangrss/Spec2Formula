@@ -1,35 +1,28 @@
 #include <algorithm>
 #include <array>
-#include <chrono>
 #include <cmath>
 #include <cstdint>
-#include <filesystem>
-#include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <numeric>
-#include <sstream>
 #include <stdexcept>
 #include <string>
 #include <vector>
+#include <utility>
 
-#ifdef _OPENMP
-#include <omp.h>
-#endif
 
 namespace {
 
 constexpr double kHydrogenMass = 1.00782503223;
 constexpr double kEpsilon = 1.0e-10;
 constexpr int kElementCount = 16;
-constexpr int kReachabilityWords = 8;
 constexpr int kHydrogenIndex = 1;
 constexpr int kHydrogenMaximum = 77;
+constexpr double kPpm = 3.0;
+constexpr double kRelativeTolerance = 3.0e-6;
+constexpr double kFloorDa = 0.001;
 
 const std::array<const char*, kElementCount> kOutputElements = {
     "C", "H", "B", "N", "O", "F", "Si", "P", "S", "Cl", "As", "Se", "Br", "Sn", "Sb", "I"};
-const std::array<int, kElementCount> kNominalMass = {
-    12, 1, 11, 14, 16, 19, 28, 31, 32, 35, 75, 80, 79, 120, 121, 127};
 
 struct Element {
   double mass;
@@ -57,48 +50,53 @@ const std::vector<Element> kHeavyElements = {
     {11.00930536, 3, 1, false, 2},
 };
 
-struct Center {
-  std::int64_t center_id = -1;
-  std::string center_key;
-  double neutral_mass = 0.0;
-};
-
 struct Candidate {
   std::array<std::uint8_t, kElementCount> counts{};
   double exact_mass = 0.0;
   float dbe = 0.0f;
 };
 
-std::vector<std::string> SplitCsv(const std::string& line) {
-  std::vector<std::string> fields;
-  std::stringstream stream(line);
-  std::string field;
-  while (std::getline(stream, field, ',')) fields.push_back(field);
-  return fields;
-}
-
-std::vector<Center> ReadCenters(const std::filesystem::path& path) {
-  std::ifstream input(path);
-  if (!input) throw std::runtime_error("cannot open input: " + path.string());
-  std::string line;
-  if (!std::getline(input, line)) throw std::runtime_error("empty centers CSV");
-  if (!line.empty() && line.back() == '\r') line.pop_back();
-  if (line != "center_id,center_key,neutral_mass") throw std::runtime_error("unexpected centers header");
-  std::vector<Center> centers;
-  while (std::getline(input, line)) {
-    if (!line.empty() && line.back() == '\r') line.pop_back();
-    if (line.empty()) continue;
-    auto fields = SplitCsv(line);
-    if (fields.size() != 3) throw std::runtime_error("unexpected centers row");
-    centers.push_back({std::stoll(fields[0]), fields[1], std::stod(fields[2])});
+void PrintProtocol() {
+  std::array<double, kElementCount> masses{};
+  std::array<int, kElementCount> valences{};
+  std::array<int, kElementCount> limits{};
+  masses[kHydrogenIndex] = kHydrogenMass;
+  valences[kHydrogenIndex] = 1;
+  limits[kHydrogenIndex] = kHydrogenMaximum;
+  for (const auto& element : kHeavyElements) {
+    masses[element.output_index] = element.mass;
+    valences[element.output_index] = element.valence;
+    limits[element.output_index] = element.maximum;
   }
-  return centers;
+  std::cout << std::setprecision(17) << "{\"candidate_domain\":{\"elements\":[";
+  for (int i = 0; i < kElementCount; ++i) {
+    if (i) std::cout << ',';
+    std::cout << '"' << kOutputElements[i] << '"';
+  }
+  std::cout << "],\"count_limits\":[";
+  for (int i = 0; i < kElementCount; ++i) {
+    if (i) std::cout << ',';
+    std::cout << limits[i];
+  }
+  std::cout << "],\"ppm\":" << kPpm << ",\"floor_da\":" << kFloorDa
+            << ",\"require_carbon\":true,\"minimum_dbe\":0,"
+               "\"enforce_integer_dbe\":true,\"enforce_senior\":true},\"exact_masses\":[";
+  for (int i = 0; i < kElementCount; ++i) {
+    if (i) std::cout << ',';
+    std::cout << masses[i];
+  }
+  std::cout << "],\"nominal_valences\":[";
+  for (int i = 0; i < kElementCount; ++i) {
+    if (i) std::cout << ',';
+    std::cout << valences[i];
+  }
+  std::cout << "]}\n";
 }
 
 class Enumerator {
  public:
   explicit Enumerator(double center)
-      : center_(center), half_width_(std::max(0.001, center * 3.0e-6)),
+      : center_(center), half_width_(std::max(kFloorDa, center * kRelativeTolerance)),
         low_(center - half_width_), high_(center + half_width_) {
     suffix_max_mass_.assign(kHeavyElements.size() + 1, 0.0);
     for (int i = static_cast<int>(kHeavyElements.size()) - 1; i >= 0; --i) {
@@ -173,7 +171,11 @@ class Enumerator {
 } // namespace
 int main(int argc, char** argv) {
   try {
-    if (argc != 2) throw std::runtime_error("usage: enumerate NEUTRAL_MASS");
+    if (argc != 2) throw std::runtime_error("usage: enumerate NEUTRAL_MASS | --protocol");
+    if (std::string(argv[1]) == "--protocol") {
+      PrintProtocol();
+      return 0;
+    }
     const double mass = std::stod(argv[1]);
     if (!std::isfinite(mass) || mass <= 0.001 || mass >= 500.0)
       throw std::runtime_error("neutral mass out of range");

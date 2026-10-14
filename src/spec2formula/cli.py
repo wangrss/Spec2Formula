@@ -2,8 +2,8 @@
 import argparse
 from pathlib import Path
 import json
-import os
 import sys
+from .output import exclusive_output
 
 def main(argv=None):
     parser = argparse.ArgumentParser(prog='spec2formula')
@@ -34,26 +34,22 @@ def main(argv=None):
         if not args.input.is_file():
             raise ValueError(f'Input file does not exist: {args.input}')
         partial = args.output.with_name(args.output.name+'.partial')
-        if args.output.exists() or partial.exists():
-            raise ValueError('Output or .partial file already exists; choose a new output path')
         import torch
         from .io import read_spectra
         torch.set_num_threads(args.threads)
-        model = Predictor(args.model_dir,device=args.device,precision=args.precision,
-                          candidate_backend=args.candidate_backend,enumerator_binary=args.enumerator_binary)
-        args.output.parent.mkdir(parents=True,exist_ok=True)
         count = 0
         try:
-            with partial.open('x',encoding='utf-8') as stream:
+            with exclusive_output(args.output) as stream:
+                model = Predictor(args.model_dir,device=args.device,precision=args.precision,
+                                  candidate_backend=args.candidate_backend,enumerator_binary=args.enumerator_binary)
                 for record in read_spectra(args.input,args.format):
                     result = model.predict(record,top_k=args.top_k,fallback_nce=args.nce)
                     stream.write(json.dumps(result,ensure_ascii=False,allow_nan=False)+'\n')
                     stream.flush()
                     count += 1
                     print(f'{count}: {result["id"]} - {result["candidate_count"]} candidates',file=sys.stderr)
-            if count == 0:
-                raise ValueError('Input contains no spectra')
-            os.replace(partial,args.output)
+                if count == 0:
+                    raise ValueError('Input contains no spectra')
         except Exception:
             print(f'Inference stopped; partial results (if any): {partial}', file=sys.stderr)
             raise

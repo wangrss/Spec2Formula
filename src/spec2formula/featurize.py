@@ -4,6 +4,7 @@ import numpy as np
 from .formula_ranker.features import pack_formula_counts, nominal_bottom_up_evidence, neural_candidate_features
 from .formula_evidence.exact_matcher import ExactMatcherConfig, match_candidate_spectrum
 from .formula_evidence.tokens import exact_evidence_tokens
+from .protocol import EVIDENCE_PEAKS, EVIDENCE_FEATURES, DOMAIN_PPM, DOMAIN_FLOOR_DA
 
 NOMINAL_MASSES = (12, 1, 11, 14, 16, 19, 28, 31, 32, 35, 75, 80, 79, 120, 121, 127)
 
@@ -45,13 +46,13 @@ class FeatureBuilder:
         return neural_candidate_features(counts, masses, dbes, spectrum.neutral_mass, nominal, priors)
 
 def build_evidence(counts, spectrum):
-    tokens = np.zeros((len(counts), 32, 40), np.float32)
-    padding = np.ones((len(counts), 32), bool)
+    tokens = np.zeros((len(counts), EVIDENCE_PEAKS, EVIDENCE_FEATURES), np.float32)
+    padding = np.ones((len(counts), EVIDENCE_PEAKS), bool)
     peaks = spectrum.peaks[:spectrum.peak_length].astype(np.float64)
-    config = ExactMatcherConfig(top_peaks=32, enable_isotope=False)
+    config = ExactMatcherConfig(top_peaks=EVIDENCE_PEAKS, ppm=DOMAIN_PPM, floor_da=DOMAIN_FLOOR_DA, enable_isotope=False)
     for index, parent in enumerate(counts):
         match = match_candidate_spectrum(parent, peaks, spectrum.precursor_mz, config)
-        batch = exact_evidence_tokens(match, peaks, spectrum.precursor_mz, maximum_tokens=32)
+        batch = exact_evidence_tokens(match, peaks, spectrum.precursor_mz, maximum_tokens=EVIDENCE_PEAKS)
         tokens[index] = batch.tokens
         padding[index] = batch.padding_mask
     return tokens, padding

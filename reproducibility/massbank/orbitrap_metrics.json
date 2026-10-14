@@ -1,0 +1,350 @@
+{
+  "evaluation": "Recalculation of archived ranks; no new inference",
+  "failure_policy": "Every manifest record retained; rank other than 1 contributes zero",
+  "methods": {
+    "Spec2Formula": {
+      "all": {
+        "spectra": 18583,
+        "connectivity_groups": 1760,
+        "spectrum_top1": 0.9890222246138944,
+        "molecule_top1": 0.9855420135512885
+      },
+      "source:CASMI_2016": {
+        "spectra": 435,
+        "connectivity_groups": 395,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:Eawag": {
+        "spectra": 11650,
+        "connectivity_groups": 1197,
+        "spectrum_top1": 0.9841201716738197,
+        "molecule_top1": 0.9827777114744536
+      },
+      "source:Eawag_Additional_Specs": {
+        "spectra": 476,
+        "connectivity_groups": 108,
+        "spectrum_top1": 0.9705882352941176,
+        "molecule_top1": 0.9537037037037037
+      },
+      "source:MetaboLights": {
+        "spectra": 33,
+        "connectivity_groups": 33,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:NaToxAq": {
+        "spectra": 3188,
+        "connectivity_groups": 110,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:UFZ": {
+        "spectra": 2801,
+        "connectivity_groups": 451,
+        "spectrum_top1": 0.9982149232416994,
+        "molecule_top1": 0.9984848484848485
+      },
+      "internal_disjoint": {
+        "spectra": 5036,
+        "connectivity_groups": 587,
+        "spectrum_top1": 0.9862986497220015,
+        "molecule_top1": 0.9811057766764752
+      },
+      "internal_disjoint_source:CASMI_2016": {
+        "spectra": 120,
+        "connectivity_groups": 106,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:Eawag": {
+        "spectra": 2911,
+        "connectivity_groups": 322,
+        "spectrum_top1": 0.9814496736516661,
+        "molecule_top1": 0.9813664596273292
+      },
+      "internal_disjoint_source:Eawag_Additional_Specs": {
+        "spectra": 398,
+        "connectivity_groups": 89,
+        "spectrum_top1": 0.964824120603015,
+        "molecule_top1": 0.9438202247191011
+      },
+      "internal_disjoint_source:MetaboLights": {
+        "spectra": 5,
+        "connectivity_groups": 5,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:NaToxAq": {
+        "spectra": 887,
+        "connectivity_groups": 30,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UFZ": {
+        "spectra": 715,
+        "connectivity_groups": 126,
+        "spectrum_top1": 0.9986013986013986,
+        "molecule_top1": 0.998015873015873
+      }
+    },
+    "msbuddy": {
+      "all": {
+        "spectra": 18583,
+        "connectivity_groups": 1760,
+        "spectrum_top1": 0.9440348705806382,
+        "molecule_top1": 0.938140588916541
+      },
+      "source:CASMI_2016": {
+        "spectra": 435,
+        "connectivity_groups": 395,
+        "spectrum_top1": 0.9586206896551724,
+        "molecule_top1": 0.9645569620253165
+      },
+      "source:Eawag": {
+        "spectra": 11650,
+        "connectivity_groups": 1197,
+        "spectrum_top1": 0.927038626609442,
+        "molecule_top1": 0.9202768737120927
+      },
+      "source:Eawag_Additional_Specs": {
+        "spectra": 476,
+        "connectivity_groups": 108,
+        "spectrum_top1": 0.9495798319327731,
+        "molecule_top1": 0.9498456790123457
+      },
+      "source:MetaboLights": {
+        "spectra": 33,
+        "connectivity_groups": 33,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:NaToxAq": {
+        "spectra": 3188,
+        "connectivity_groups": 110,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "source:UFZ": {
+        "spectra": 2801,
+        "connectivity_groups": 451,
+        "spectrum_top1": 0.947161727954302,
+        "molecule_top1": 0.9500389854048391
+      },
+      "internal_disjoint": {
+        "spectra": 5036,
+        "connectivity_groups": 587,
+        "spectrum_top1": 0.9594916600476568,
+        "molecule_top1": 0.9505466567759886
+      },
+      "internal_disjoint_source:CASMI_2016": {
+        "spectra": 120,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.9916666666666667,
+        "molecule_top1": 0.9905660377358491
+      },
+      "internal_disjoint_source:Eawag": {
+        "spectra": 2911,
+        "connectivity_groups": 322,
+        "spectrum_top1": 0.9481277911370662,
+        "molecule_top1": 0.9353276985264565
+      },
+      "internal_disjoint_source:Eawag_Additional_Specs": {
+        "spectra": 398,
+        "connectivity_groups": 89,
+        "spectrum_top1": 0.9396984924623115,
+        "molecule_top1": 0.9391385767790263
+      },
+      "internal_disjoint_source:MetaboLights": {
+        "spectra": 5,
+        "connectivity_groups": 5,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:NaToxAq": {
+        "spectra": 887,
+        "connectivity_groups": 30,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:UFZ": {
+        "spectra": 715,
+        "connectivity_groups": 126,
+        "spectrum_top1": 0.9608391608391609,
+        "molecule_top1": 0.9669312169312169
+      }
+    },
+    "MIST_CF": {
+      "all": {
+        "spectra": 18583,
+        "connectivity_groups": 1760,
+        "spectrum_top1": 0.9116934832911802,
+        "molecule_top1": 0.8970767949944127
+      },
+      "source:CASMI_2016": {
+        "spectra": 435,
+        "connectivity_groups": 395,
+        "spectrum_top1": 0.9149425287356322,
+        "molecule_top1": 0.9215189873417722
+      },
+      "source:Eawag": {
+        "spectra": 11650,
+        "connectivity_groups": 1197,
+        "spectrum_top1": 0.8865236051502146,
+        "molecule_top1": 0.8810298810516755
+      },
+      "source:Eawag_Additional_Specs": {
+        "spectra": 476,
+        "connectivity_groups": 108,
+        "spectrum_top1": 0.8781512605042017,
+        "molecule_top1": 0.8304526748971193
+      },
+      "source:MetaboLights": {
+        "spectra": 33,
+        "connectivity_groups": 33,
+        "spectrum_top1": 0.9696969696969697,
+        "molecule_top1": 0.9696969696969697
+      },
+      "source:NaToxAq": {
+        "spectra": 3188,
+        "connectivity_groups": 110,
+        "spectrum_top1": 0.998745294855709,
+        "molecule_top1": 0.9988338854128328
+      },
+      "source:UFZ": {
+        "spectra": 2801,
+        "connectivity_groups": 451,
+        "spectrum_top1": 0.9218136379864335,
+        "molecule_top1": 0.9189724232407159
+      },
+      "internal_disjoint": {
+        "spectra": 5036,
+        "connectivity_groups": 587,
+        "spectrum_top1": 0.9271247021445592,
+        "molecule_top1": 0.9063768210360865
+      },
+      "internal_disjoint_source:CASMI_2016": {
+        "spectra": 120,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.9416666666666667,
+        "molecule_top1": 0.9433962264150944
+      },
+      "internal_disjoint_source:Eawag": {
+        "spectra": 2911,
+        "connectivity_groups": 322,
+        "spectrum_top1": 0.9110271384403985,
+        "molecule_top1": 0.9034459157129968
+      },
+      "internal_disjoint_source:Eawag_Additional_Specs": {
+        "spectra": 398,
+        "connectivity_groups": 89,
+        "spectrum_top1": 0.8844221105527639,
+        "molecule_top1": 0.8320224719101124
+      },
+      "internal_disjoint_source:MetaboLights": {
+        "spectra": 5,
+        "connectivity_groups": 5,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:NaToxAq": {
+        "spectra": 887,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.9977452085682075,
+        "molecule_top1": 0.9982456140350877
+      },
+      "internal_disjoint_source:UFZ": {
+        "spectra": 715,
+        "connectivity_groups": 126,
+        "spectrum_top1": 0.9258741258741259,
+        "molecule_top1": 0.9099409849409849
+      }
+    },
+    "SIRIUS": {
+      "all": {
+        "spectra": 18583,
+        "connectivity_groups": 1760,
+        "spectrum_top1": 0.8830651670881989,
+        "molecule_top1": 0.8768702102777559
+      },
+      "source:CASMI_2016": {
+        "spectra": 435,
+        "connectivity_groups": 395,
+        "spectrum_top1": 0.9241379310344827,
+        "molecule_top1": 0.9291139240506329
+      },
+      "source:Eawag": {
+        "spectra": 11650,
+        "connectivity_groups": 1197,
+        "spectrum_top1": 0.8571673819742489,
+        "molecule_top1": 0.853198394945281
+      },
+      "source:Eawag_Additional_Specs": {
+        "spectra": 476,
+        "connectivity_groups": 108,
+        "spectrum_top1": 0.9243697478991597,
+        "molecule_top1": 0.9153292181069959
+      },
+      "source:MetaboLights": {
+        "spectra": 33,
+        "connectivity_groups": 33,
+        "spectrum_top1": 0.9696969696969697,
+        "molecule_top1": 0.9696969696969697
+      },
+      "source:NaToxAq": {
+        "spectra": 3188,
+        "connectivity_groups": 110,
+        "spectrum_top1": 0.9949811794228356,
+        "molecule_top1": 0.9952663386190133
+      },
+      "source:UFZ": {
+        "spectra": 2801,
+        "connectivity_groups": 451,
+        "spectrum_top1": 0.8489825062477686,
+        "molecule_top1": 0.851106752326265
+      },
+      "internal_disjoint": {
+        "spectra": 5036,
+        "connectivity_groups": 587,
+        "spectrum_top1": 0.9030976965845909,
+        "molecule_top1": 0.8985032750395023
+      },
+      "internal_disjoint_source:CASMI_2016": {
+        "spectra": 120,
+        "connectivity_groups": 106,
+        "spectrum_top1": 0.925,
+        "molecule_top1": 0.9245283018867925
+      },
+      "internal_disjoint_source:Eawag": {
+        "spectra": 2911,
+        "connectivity_groups": 322,
+        "spectrum_top1": 0.8859498454139471,
+        "molecule_top1": 0.8819943592618972
+      },
+      "internal_disjoint_source:Eawag_Additional_Specs": {
+        "spectra": 398,
+        "connectivity_groups": 89,
+        "spectrum_top1": 0.9271356783919598,
+        "molecule_top1": 0.9118601747815229
+      },
+      "internal_disjoint_source:MetaboLights": {
+        "spectra": 5,
+        "connectivity_groups": 5,
+        "spectrum_top1": 1.0,
+        "molecule_top1": 1.0
+      },
+      "internal_disjoint_source:NaToxAq": {
+        "spectra": 887,
+        "connectivity_groups": 30,
+        "spectrum_top1": 0.992108229988726,
+        "molecule_top1": 0.9913300492610837
+      },
+      "internal_disjoint_source:UFZ": {
+        "spectra": 715,
+        "connectivity_groups": 126,
+        "spectrum_top1": 0.8447552447552448,
+        "molecule_top1": 0.8344797178130509
+      }
+    }
+  }
+}

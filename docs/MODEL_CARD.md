@@ -64,8 +64,12 @@ release. CUDA execution has not yet been validated for this release.
 
 ## Distribution
 
-The local release contains the actual `.pt` files, not LFS pointer stubs.
-`.gitattributes` configures Git LFS for eventual GitHub publication. A separate
-checkpoint release archive can alternatively be used. Code and checkpoint
-license terms, authorship metadata, publication citation and public URLs remain
-to be supplied before public distribution; this local handoff adds no license grant.
+The public repository is https://github.com/wangrss/Spec2Formula. The `.pt`
+files are tracked with Git LFS; `git lfs pull` retrieves the full model assets.
+Run `spec2formula verify` after retrieval to check their sizes and SHA256 hashes.
+
+Software uses the MIT License. Weights and training-derived priors have separate
+terms in `checkpoints/default/LICENSE`. The author has deferred licensing
+these assets, which are excluded from the project MIT License.
+MassBank records retain their original licenses.
+The paper citation will be added when bibliographic details are available.

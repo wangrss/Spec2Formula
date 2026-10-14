@@ -1,0 +1,86 @@
+{
+  "source_release": "2026.03",
+  "source_commit": "705afb7bccc3b2c42410a744eef73674716a60ef",
+  "source_repository": "https://github.com/MassBank/MassBank-data",
+  "cohorts": {
+    "orbitrap_six": {
+      "spectra": 18583,
+      "connectivity_groups": 1760,
+      "sources": {
+        "CASMI_2016": 435,
+        "Eawag": 11650,
+        "Eawag_Additional_Specs": 476,
+        "MetaboLights": 33,
+        "NaToxAq": 3188,
+        "UFZ": 2801
+      },
+      "record_license_counts": {
+        "CC BY": 10408,
+        "CC BY-SA": 4678,
+        "CC0": 3497
+      },
+      "all_original_records_sha_verified": true,
+      "all_rebuilt_preprocessing_arrays_equal": true
+    },
+    "qtof_common": {
+      "spectra": 22573,
+      "connectivity_groups": 2162,
+      "sources": {
+        "Antwerp_Univ": 705,
+        "Athens_Univ": 3712,
+        "BAFG": 12813,
+        "CPU": 7,
+        "Env_Anal_Chem_U_Tuebingen": 78,
+        "HBM4EU": 299,
+        "MSSJ": 640,
+        "RIKEN": 3691,
+        "UPAO": 6,
+        "UvA_IBED": 9,
+        "Washington_State_Univ": 613
+      },
+      "record_license_counts": {
+        "CC BY": 4246,
+        "CC BY-SA": 1602,
+        "dl-de/by-2-0": 12813,
+        "CC0": 299,
+        "CC BY-NC-SA": 3613
+      },
+      "all_original_records_sha_verified": true,
+      "all_rebuilt_preprocessing_arrays_equal": true
+    }
+  },
+  "cohort_policy": "Frozen exact membership; observational [M+H]+, precursor m/z <500, deduplication and scalar-energy compatibility; no precursor-error quality filter",
+  "peak_policy": "Finite positive peaks, top128 by stable descending intensity, max-intensity normalization, stable ascending m/z, float32",
+  "orbitrap_energy_policy": "Frozen Option-B single-value compatibility view; source scalar value and actual effective float32 model input retained; no replacement with the narrower initial conversion NCE field",
+  "qtof_energy_policy": "500 * scalar energy / precursor_mz; explicit eV or V, title-recovered V under singly charged assumption; float32 model input and unchanged NCE/200 clamp to [0,2]",
+  "targets": "Included only for evaluation; rebuilding emits no reference formula fields",
+  "licensing": "Source records retain their per-record licenses. No raw records or peaks redistributed in this bundle.",
+  "historical_results": "Archived target ranks, retaining failed outputs; arithmetic matches paper-facing tables. No new model inference or accuracy claim.",
+  "artifacts": {
+    "orbitrap_manifest.csv": {
+      "bytes": 12288232,
+      "sha256": "ec20a328eeb2510dc1b3bb3fbf232ba054afb12a4966e755ab95a7857e5d308c"
+    },
+    "orbitrap_frozen_ranks.csv": {
+      "bytes": 592798,
+      "sha256": "4f52d4325b1994ea074d64394e373c44ffb5b1e5b766e3a5f6f34d50644edf1d"
+    },
+    "orbitrap_metrics.json": {
+      "bytes": 10743,
+      "sha256": "aa1b3cb45c7b8b0f9fc2f4efa01b85cdb4d92d92335a82c19c5f97caf39bfac9"
+    },
+    "qtof_manifest.csv": {
+      "bytes": 15608609,
+      "sha256": "3a0cd23e3d7164dd381d281ee2f76450aea978559b306567ce5154637fccddcb"
+    },
+    "qtof_frozen_ranks.csv": {
+      "bytes": 777868,
+      "sha256": "b5ddd1f1b44cd3cfd21183befb99cd8ddeca71c7c6ffc2faa034f2fca6d9fe87"
+    },
+    "qtof_metrics.json": {
+      "bytes": 18019,
+      "sha256": "8a4e9b43aa421cf3ceaf5da3ccf6922c55115c5397c11d40659dd6550a3e95e0"
+    }
+  },
+  "all_top1_tables_reproduced": true
+}

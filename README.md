@@ -7,7 +7,7 @@ using a **Candidate ranker** followed by an **Evidence reranker**.
 [Model card](docs/MODEL_CARD.md)
 
 This repository contains inference code and a frozen pretrained model pair.
-No training or evaluation dataset is included. The example spectra are
+No training dataset or source spectra are included. The example spectra are
 artificial inputs for checking installation, not experimental observations.
 
 ## Requirements
@@ -58,11 +58,13 @@ you intend to change it.
 
 ### Checkpoint files
 
-The local release folder already contains the two `.pt` files and frozen priors
-under `checkpoints/default/` (about 89 MB combined). Git LFS tracking is configured
-for `.pt` files. After cloning a published GitHub repository with LFS weights:
+The reference checkpoints and frozen priors are under `checkpoints/default/`
+(about 89 MB combined). The two `.pt` files are tracked with Git LFS.
+Clone the repository and retrieve the LFS objects:
 
 ```bash
+git clone https://github.com/wangrss/Spec2Formula.git
+cd Spec2Formula
 git lfs install
 git lfs pull
 spec2formula verify --model-dir checkpoints/default
@@ -107,6 +109,9 @@ the parser does not silently equate the two.
 
 `--top-k 0` writes every enumerated candidate. This option changes output length,
 not the fixed Evidence budget of 20. Outputs are never automatically overwritten.
+The CLI reserves a `.partial` file before loading the model and atomically creates
+the final output without replacing an existing filesystem entry. A filesystem
+without hard-link support fails with the partial results retained.
 An invalid input stops the run with a nonzero exit code; completed records remain
 in a clearly named `.partial` file rather than a success-named output file.
 
@@ -162,6 +167,7 @@ tools/                 optional native build helper
 examples/              one artificial spectrum in JSONL and MGF
 tests/                 chemistry, input and end-to-end regression checks
 docs/                  model card and file formats
+reproducibility/        frozen MassBank membership, attribution and archived ranks
 ```
 
 The released reference pair is the validation-selected Candidate ranker (epoch
@@ -170,12 +176,39 @@ external evaluation. It is a single model pair, not a five-fold ensemble or a
 new model fitted to all samples. Export removes optimizer states; all model
 tensors are exactly preserved. Details are in the model card.
 
+The [MassBank reproducibility guide](reproducibility/massbank/README.md) provides
+the exact 18,583-spectrum Orbitrap and 22,573-spectrum common QTOF manifests,
+record-level licenses, verified input reconstruction, archived four-method
+results and evaluation commands. Source spectra are retrieved from the pinned
+official MassBank-data release. Training and five-fold reproduction are separate
+from this reference inference release.
+
 ## Checks
 
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-Tests use artificial spectra and the included checkpoints. Training and dataset preparation
-are outside this inference release. Public repository URL, software/weight
-license terms and publication citation will be completed before publication.
+Tests use artificial spectra and the reference checkpoints. Fixed fixtures
+cover candidate features, exact-evidence tokens, scores, a 23-candidate final
+ranking, and unchanged tails. CLI tests cover output reservation and competing
+writers. GitHub Actions runs CPU checks on pushes and pull requests. Fixture
+provenance and numerical tolerances are in `tests/fixtures/PROVENANCE.json`.
+
+Checkpoint configuration is checked against the frozen scientific protocol on
+loading. The native enumerator reports its compiled domain, reference masses
+and valences through `--protocol`; mismatched or older binaries are rejected
+with a rebuild instruction. Operational candidate chunk size remains separate
+from the frozen candidate domain and model feature-normalization scales.
+
+## License and citation
+
+Project software and artificial test fixtures use the [MIT License](LICENSE).
+Checkpoint weights and prior arrays have separate terms in
+[the model asset notice](checkpoints/default/LICENSE). The author has deferred
+licensing these assets, which are excluded from the project MIT License.
+MassBank records retain their individual licenses.
+See [NOTICE.md](NOTICE.md) for scope.
+
+The repository is https://github.com/wangrss/Spec2Formula. Publication citation
+metadata will be added when the paper's bibliographic details are available.
